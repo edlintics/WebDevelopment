@@ -13,7 +13,7 @@ function CreateComment({postId}) { // the comment need to know the post id in or
     const onSubmit = async (event) => {
         event.preventDefault(); // check the Post create to see why do this
 
-        await axios.post(`http://localhost:4001/posts/${postId}/comments`, {
+        await axios.post(`http://posts.com/posts/${postId}/comments`, {
             content
         })
 
@@ -23,7 +23,7 @@ function CreateComment({postId}) { // the comment need to know the post id in or
     return(
         <div>
             <form onSubmit={onSubmit}>
-                <div classNAme="form-group">
+                <div className="form-group">
                     <label> New Comment</label>
                     <input value={content} onChange={handleContent} className="form-control" />
                 </div>

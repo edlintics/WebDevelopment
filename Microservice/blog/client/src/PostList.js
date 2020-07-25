@@ -6,8 +6,9 @@ import CommentList from "./CommentList"
 function PostList() {
     const [posts, setPosts] = useState({}); // the data type is fetched as json object since we see them in the post express routes
 
+    //make query to service query, which fetch bot post title and comments
     const fetchPost = async () => {
-        const res = await axios.get("http://localhost:4000/posts");
+        const res = await axios.get("http://posts.com/posts");
         setPosts(res.data)
     }
 
@@ -23,12 +24,14 @@ function PostList() {
             className = "card"
             style={{width: "30%", marginBottom: "20px"}}
             key={post.id}
+
             >
             <div className="card-body">
                 <h3>{post.title}</h3>
-                <CommentCreate postId={post.id} /> 
-                {/* This create the comment section and pased in the post id from maping components, use props for this */}
-                <CommentList postId={post.id}/>
+             {/* This create the comment section and pased in the post id from maping components, use props for this */}
+                <CommentList comments={post.comments}/>
+                <CommentCreate postId = {post.id} /> 
+                
             </div>
             </div>
         )

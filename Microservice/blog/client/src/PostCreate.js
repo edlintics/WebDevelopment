@@ -13,10 +13,10 @@ function PostCreate() {
     const onSubmit = async function (event) { // return a promise, this have to be wait in order to do other things
         event.preventDefault(); // prevent fron the action of Submit, the form will reload the hall page
 
-        await axios.post('http://localhost:4000/posts', {
+        await axios.post('http://posts.com/posts/create', {
             title
         }) // we have to wait for the promise to be submitted to server, in this case is the post data from user
-        // create post request to them and send the conent of title
+        // create post request to them and send the content of title
 
         setTitle("") // set the input back to empty
     }

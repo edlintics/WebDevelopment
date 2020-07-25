@@ -5,7 +5,7 @@ import PostList from "./PostList.js"
 function App() {
   return (
     <div className="container">
-      <h1>Blog app</h1>
+      <h1>Create Posts!!!!!!</h1>
       <PostCreate />
       <hr />
       <h1> Posts</h1>
